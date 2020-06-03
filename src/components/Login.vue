@@ -53,7 +53,7 @@ export default {
       this.$refs.loginFormRef.validate(async valid => {
         // eslint-disable-next-line no-useless-return
         if (!valid) return
-        const { data: res } = await this.$http.post('http://127.0.0.1:8888/api/private/v1/login', this.loginForm)
+        const { data: res } = await this.$http.post('login', this.loginForm)
         if (res.meta.status !== 200) return this.$message.error(res.meta.msg)
         this.$message.success(res.meta.msg)
         window.sessionStorage.setItem('token', res.data.token)

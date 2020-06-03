@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -10,9 +11,17 @@ import './assets/css/gloabl.css'
 import './assets/fonts/iconfont.css'
 
 // 配置请求的根路径
-axios.defaults.baseUrl = 'http://127.0.0.1:8888/api/private/v1/'
+var instance = axios.create({
+  baseURL: 'http://127.0.0.1:8888/api/private/v1/'
+})
+// axios.defaults.baseUrl = 'http://127.0.0.1:8888/api/private/v1/'
 
-Vue.prototype.$http = axios
+instance.interceptors.request.use(config => {
+  config.headers.Authorization = window.sessionStorage.getItem('token')
+  return config
+})
+
+Vue.prototype.$http = instance
 
 Vue.config.productionTip = false
 
