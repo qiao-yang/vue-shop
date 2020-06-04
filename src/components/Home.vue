@@ -51,7 +51,6 @@ export default {
     }
   },
   created () {
-    // eslint-disable-next-line no-unused-expressions
     this.getMenusList()
     this.activePath = window.sessionStorage.getItem('activePath')
   },

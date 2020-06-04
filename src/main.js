@@ -16,6 +16,7 @@ var instance = axios.create({
 })
 // axios.defaults.baseUrl = 'http://127.0.0.1:8888/api/private/v1/'
 
+// 拦截器，判断有没有携带token
 instance.interceptors.request.use(config => {
   config.headers.Authorization = window.sessionStorage.getItem('token')
   return config
