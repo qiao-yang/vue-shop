@@ -68,6 +68,7 @@ export default {
 			},
 			// 总数
 			total: 0,
+			// 树形菜单列设置
 			columns: [
 				{
 					label: '分类名称',
