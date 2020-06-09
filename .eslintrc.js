@@ -20,6 +20,8 @@ module.exports = {
 		'indent': 0,
 		'no-mixed-spaces-and-tabs': 0,
 		'no-useless-return': 0,
-		'padded-blocks': 0
+		'padded-blocks': 0,
+		'no-unused-vars': 0,
+		'keyword-spacing': 0
   }
 }
