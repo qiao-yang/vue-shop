@@ -152,7 +152,6 @@ export default {
 		},
 		// 选择项变化触发
 		parentCateChange () {
-			console.log(this.selectedKeys)
 			// 如果length > 0 证明选中父级分类
 			// 如果 > 1证明选中二级分类
 			// 反之，没有选中
